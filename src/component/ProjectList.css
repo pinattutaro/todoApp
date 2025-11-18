@@ -1,0 +1,78 @@
+.ProjectList {
+    padding-bottom: 1em;
+    /* background-color: hsl(var(--color-angle), 40%, 95%); */
+    /* min-height: 2.5em; */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    /* 必要なら親内で伸縮させたい場合 */
+    flex: 1 1 auto;
+
+    & > .title {
+        font-size: 1em;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5em;
+        padding: 0.5em 0;
+        height: 2.5em;
+        border-radius: 1em 1em 0 0;
+        background: hsl(var(--color-angle), 90%, 90%);
+        position: relative;
+        user-select: none;
+
+        & > .add {
+            height: 100%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            position: absolute;
+            right: 1em;
+            cursor: pointer;
+            display: grid;
+            place-content: center;
+            user-select: none;
+
+            &:hover {
+                background-color: hsl(var(--color-angle), 80%, 80%);
+            }
+        }
+    }
+
+    & > .todoes {
+        min-height: 0;
+        padding: 0.5em 2em;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 0.5em;
+        cursor: grab;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: hsl(var(--color-angle), 40%, 95%);
+        flex: 1 1 auto;
+        max-height: 100%;
+        position: relative;
+
+        & > .todo {
+            flex-grow: 0;
+            flex-shrink: 0;
+            font-size: 1.5em;
+            /* height: 2em; */
+            border-radius: 0.5em;
+            /* border: solid 1px #ccc; */
+            /* padding: 0 2em; */
+            margin: 0;
+            user-select: none;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            text-align: center;
+            line-height: 2;
+            background-color: hsl(var(--color-angle), 60%, 90%);
+            /* display: grid;
+            place-content: center; */
+        }
+    }
+}

@@ -1,0 +1,110 @@
+#root {
+	/* max-width: 1280px; */
+	/* margin: 0 auto;
+	padding: 2rem; */
+	text-align: center;
+}
+
+@container main (width < 800px) {
+	.page {
+		column-count: 2 !important;
+	}
+}
+
+/* @container main (width < 500px) { */
+@container main (aspect-ratio < 1/1) {
+	.page {
+		columns: none !important;
+		display: flex !important;
+		flex-direction: column !important;
+		overflow-x: hidden !important;
+		overflow-y: auto !important;
+		scroll-snap-type: y mandatory !important;
+	}
+
+	.page > .ProjectList {
+		/* height: 100cqh !important; */
+		/* min-height: unset !important; */
+		flex-grow: 1 !important;
+		flex-shrink: 0 !important;
+	}
+}
+
+.App {
+	width: 100dvw;
+	height: 100dvh;
+	display: grid;
+	grid-template-rows: 1fr 8fr;
+	grid-template-columns: 1fr 5fr;
+	background-color: var(--primary);
+	overflow: hidden;
+	/* color: black; */
+
+	& > .Nav {
+		background: var(--secondary);
+		grid-row: 1 / 3;
+		min-width: 0;
+	}
+
+	& > .Header {
+		box-sizing: border-box;
+	}
+
+	& > .main {
+		width: 100%;
+		padding: 1em;
+		container-type: size;
+		container-name: main;
+		position: relative;
+
+		& > .page {
+			width: 100%;
+			height: 100%;
+			column-count: 3;
+			column-gap: 1em;
+			container-type: size;
+			overflow: hidden;
+			overflow-x: scroll;
+			scroll-snap-type: x mandatory;
+			scrollbar-width: none;
+
+			& > .ProjectList {
+				max-height: 100cqh;
+				/* max-height: 50cqh; */
+				/* height: 45cqh; */
+				min-height: calc(100cqh / 3);
+				/* resize: vertical; */
+				/* margin-bottom: 1em; */
+				overflow: hidden;
+				scroll-snap-align: start;
+			}
+		}
+
+		.new {
+			position: absolute;
+			bottom: 1em;
+			right: 1em;
+			width: 3em;
+			height: 3em;
+			border-radius: 50%;
+			background-color: white;
+			color: black;
+			display: grid;
+			place-content: center;
+			font-size: 2em;
+			box-shadow: 0 0 10px rgba(0,0,0,0.3);
+			cursor: pointer;
+			user-select: none;
+			color: black;
+
+			&:hover {
+				/* box-shadow: 0 0 5em rgba(255,255,255,1); */
+				transform: scale(1.1);
+			}
+
+			&:active {
+				transform: scale(0.9);
+			}
+		}
+	}
+}

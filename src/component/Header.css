@@ -1,0 +1,62 @@
+.Header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    justify-items: center;
+    
+    & > .days {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        justify-self: end;
+        gap: 10px;
+        position: relative;
+
+        & > .date {
+            cursor: pointer;
+            opacity: 0.7;
+            display: grid;
+            place-items: center;
+            user-select: none;
+            position: relative;
+
+            &.selected {
+                opacity: 1;
+                font-weight: bold;
+                font-size: 1.5em;
+            }
+
+            & > input {
+                width: 0;
+                height: 0;
+                font-size: 0;
+                border: none;
+                /* position: fixed;
+                top: 50dvh;
+                left: 50dvw; */
+            }
+
+            & > .datepicker {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+
+    & > .pageSelector {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-items: center;
+        align-content: center;
+        justify-content: center;
+        gap: 10px;
+
+        & > span {
+            cursor: pointer;
+            user-select: none;
+        }
+    }
+}
