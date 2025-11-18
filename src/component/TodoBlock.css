@@ -1,8 +1,25 @@
+@keyframes blink {
+    0% {
+        color: red;
+        text-shadow: 0 0 5px red;
+    }
+    50% {color: inherit;}
+}
+
 .TodoBlock {
     user-select: none;
 
     display: flex;
     flex-direction: column;
+
+    &.today {
+        animation: blink 2s infinite;
+    }
+
+    &.past {
+        color: red;
+        background-color: hsl(0, 0%, 50%);
+    }
 
     & > .main {
         white-space: nowrap;
@@ -73,6 +90,7 @@
             white-space: normal;
             word-break: break-word;
             text-align: left;
+            resize: none;
         }
     }
 }

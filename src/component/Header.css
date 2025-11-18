@@ -42,6 +42,19 @@
                 top: 0;
                 left: 0;
             }
+
+            & > .todoNum {
+                position: absolute;
+                top: -0.5em;
+                right: -0.5em;
+                font-size: 0.5em;
+                background-color: white;
+                height: 1.2em;
+                aspect-ratio: 1;
+                display: grid;
+                place-content: center;
+                border-radius: 50%;
+            }
         }
     }
 

@@ -9,18 +9,36 @@ type Prop = {
     deleteTodo: () => void;
 }
 
-function getDateString(date: Date) {
+const getDateString = (date: Date) => {
     const year = date.getFullYear();
     const month = (date.getMonth() + 1).toString().padStart(2, '0');
     const day = date.getDate().toString().padStart(2, '0');
     return `${year}-${month}-${day}`;
 }
 
+const getDay = (date: Date) => {
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0');
+    return (new Date(`${year}-${month}-${day}`)).getTime();
+}
+
+const compareDay = (d: Date) => {
+    const today = getDay(new Date());
+    const target = getDay(d);
+    console.log({today, target});
+    if (today === target) return 0;
+    else if (today < target) return 1;
+    else return -1;
+}
+
 function TodoBlock({todo, setTodo, projects, deleteTodo}: Prop) {
     const [isEditing, setIsEditing] = React.useState(false);
+    const dayComparison = compareDay(todo.deadline);
+    // console.log(dayComparison);
 
     return (
-        <div className="TodoBlock">
+        <div className={`TodoBlock ${(dayComparison === 0 ? "today" : dayComparison === 1 ? "future" : "past")}`}>
             <div className={`main ${todo.completed ? "completed" : ""}`} onClick={() => {
                 if (!todo.completed) return;
                 deleteTodo();

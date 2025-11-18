@@ -1,11 +1,13 @@
 import React from "react";
 import './Header.css';
 // import DatePicker from 'react-datepicker';
+import type { Todo } from './types.tsx';
 import 'react-datepicker/dist/react-datepicker.css';
 
 type Props = {
     date: Date;
     setDate: React.Dispatch<React.SetStateAction<Date>>;
+    todos: Todo[];
 }
 
 const isSameDay = (date1: Date, date2: Date): boolean => {
@@ -26,7 +28,7 @@ const d2s = (date: Date): string => {
     return `${m}/${d}`;
 }
 
-function Header({date, setDate}: Props) {
+function Header({date, setDate, todos}: Props) {
     const kernelRadius = 2;
     const kernel = Array.from({length: kernelRadius * 2 + 1}, (_, i) => i - kernelRadius);
     // const [otherDateState, setOtherDateState] = React.useState<boolean>(false);
@@ -38,10 +40,17 @@ function Header({date, setDate}: Props) {
             <div className="days">
                 {kernel.map((offset: number) => {
                     const d = addDays(date, offset);
+                    const thisTodosNum = todos.filter(td => isSameDay(td.deadline, d)).length;
+
                     return (
                         <div className={`date ${offset === 0 ? "selected": ""}`} onClick={() => {
                             setDate(d);
-                        }}>{isSameDay(new Date(), d) ? "Today" : d2s(d)}</div>
+                        }}>
+                            {isSameDay(new Date(), d) ? "Today" : d2s(d)}
+                            {thisTodosNum > 0 && 
+                                <div className="todoNum">{thisTodosNum}</div>
+                            }
+                        </div>
                     );
                 })}
                 <div className="date">

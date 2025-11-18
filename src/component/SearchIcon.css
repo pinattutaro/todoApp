@@ -1,0 +1,32 @@
+.SearchIcon {
+    padding: 1em;
+    box-sizing: border-box;
+    overflow: hidden;
+    /* resize: both; */
+
+    width: 50dvw;
+    height: 50dvh;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    & > .icons {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.5em;
+
+        & > div {
+            aspect-ratio: 1;
+            font-size: 20cqw;
+            display: grid;
+            place-content: center;
+            color: black;
+            background-color: #f0f0f0;
+        }
+    }
+}
