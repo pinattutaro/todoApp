@@ -35,8 +35,10 @@ This is a feature-rich single-page Todo application built with React, TypeScript
 _The main interface showcasing the task list and project organization._
 
 ### Mobile View
-![Mobile View](./public/mobile.png)
-_Responsive design for seamless access on mobile devices._
+<figure>
+  <img src="./public/mobile.png" alt="Mobile View" />
+  <figcaption>Responsive design for seamless access on mobile devices.</figcaption>
+</figure>
 
 ### Urgent Task Warning
 ![Urgent Task Warning](./public/blink.png)
