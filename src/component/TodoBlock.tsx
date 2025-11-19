@@ -7,6 +7,7 @@ type Prop = {
     setTodo: React.Dispatch<React.SetStateAction<Todo>>;
     projects?: Project[];
     deleteTodo: () => void;
+    setDate: React.Dispatch<React.SetStateAction<Date>>;
 }
 
 const getDateString = (date: Date) => {
@@ -32,7 +33,7 @@ const compareDay = (d: Date) => {
     else return -1;
 }
 
-function TodoBlock({todo, setTodo, projects, deleteTodo}: Prop) {
+function TodoBlock({todo, setTodo, projects, deleteTodo, setDate}: Prop) {
     const [isEditing, setIsEditing] = React.useState(false);
     const dayComparison = compareDay(todo.deadline);
     // console.log(dayComparison);
@@ -77,6 +78,7 @@ function TodoBlock({todo, setTodo, projects, deleteTodo}: Prop) {
                     <input type="date" value={getDateString(todo.deadline)} onChange={(e) => {
                         const value = new Date((e.target as HTMLInputElement).value);
                         setTodo((prev: Todo) => ({ ...prev, deadline: value }));
+                        setDate(value);
                     }}/>
                 </div>
             }

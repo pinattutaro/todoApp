@@ -83,7 +83,7 @@ function App() {
 													return [...others, ...newProjectTodos];
 												});
 											};
-											return <ProjectList key={prj.id} project={prj} todoes={thisTodoes} setTodoes={setThisTodoes} projects={projects} />;
+											return <ProjectList key={prj.id} project={prj} todoes={thisTodoes} setTodoes={setThisTodoes} projects={projects} setDate={setDate} />;
 										})}
 									</>
 								);

@@ -9,9 +9,10 @@ type Prop = {
     todoes: Todo[];
     setTodoes: React.Dispatch<React.SetStateAction<Todo[]>>;
     projects?: Project[];
+    setDate: React.Dispatch<React.SetStateAction<Date>>;
 }
 
-function ProjectList({project, todoes, setTodoes, projects}: Prop) {
+function ProjectList({project, todoes, setTodoes, projects, setDate}: Prop) {
     const {name, color, icon} = project;
     console.log(todoes);
 
@@ -93,6 +94,7 @@ function ProjectList({project, todoes, setTodoes, projects}: Prop) {
                                 setTodoes(prev => prev.filter(item => item.id !== td.id));
                             }}
                             projects={projects}
+                            setDate={setDate}
                         />
                     </Reorder.Item>
                 ))}
