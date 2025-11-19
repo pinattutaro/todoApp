@@ -28,6 +28,20 @@ This is a feature-rich single-page Todo application built with React, TypeScript
     - A global `+` button to quickly add a task to a default project.
     - A project-specific `+` button to add a task directly to the relevant project.
 
+## 📸 Screenshots
+
+### Main Screen
+![Main Screen](./public/main.png)
+_The main interface showcasing the task list and project organization._
+
+### Mobile View
+![Mobile View](./public/mobile.png)
+_Responsive design for seamless access on mobile devices._
+
+### Urgent Task Warning
+![Urgent Task Warning](./public/blink.png)
+_Visual alert for tasks due today, ensuring timely completion._
+
 ### 🚧 Planned Features
 - **Calendar View**: A visual way to see your tasks on a monthly calendar.
 - **Expired View**: A dedicated section to review all past-due tasks.

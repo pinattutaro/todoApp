@@ -3,7 +3,6 @@ import './App.css'
 import Header from './component/Header.tsx'
 import Nav from './component/Nav.tsx'
 import ProjectList from './component/ProjectList.tsx'
-import SearchIcon from './component/SearchIcon.tsx'
 import type { Project, Todo } from './component/types.tsx';
 
 const ptemp = [
@@ -46,15 +45,15 @@ function App() {
 	const [date, setDate] = useState<Date>(new Date());
 	const [mode,  setMode] = useState<string>('list');
 	const [projects, setProjects] = useState<Project[]>(ptemp);
-	const [todos, setTodos] = useState<Todo[]>(tdtemp);
-	// const [todos, setTodos] = useState<Todo[]>(() => {
-	// 	const stored = localStorage.getItem('todoes');
-	// 	// return (stored ? JSON.parse(stored) : tdtemp) as Todo[];
-	// 	if (!stored) return tdtemp;
-	// 	const parsed: Todo[] = JSON.parse(stored);
-	// 	return parsed.map(td => ({...td, deadline: new Date(td.deadline)}));
+	// const [todos, setTodos] = useState<Todo[]>(tdtemp);
+	const [todos, setTodos] = useState<Todo[]>(() => {
+		const stored = localStorage.getItem('todoes');
+		// return (stored ? JSON.parse(stored) : tdtemp) as Todo[];
+		if (!stored) return tdtemp;
+		const parsed: Todo[] = JSON.parse(stored);
+		return parsed.map(td => ({...td, deadline: new Date(td.deadline)}));
 		
-	// });
+	});
 	
 	localStorage.setItem('projects', JSON.stringify(projects));
 	localStorage.setItem('todoes', JSON.stringify(todos));
