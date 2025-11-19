@@ -77,3 +77,7 @@ _Visual alert for tasks due today, ensuring timely completion._
 
 ## 🌐 Live Demo
 You can access the live demo of this application here: [https://pinattutaro.github.io/todo/](https://pinattutaro.github.io/todo/)
+
+## 🗓️ Project Details
+- **Development Period**: November 6, 2025 - November 19, 2025
+- **Production Time**: 20 hours
