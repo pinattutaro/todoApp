@@ -1,5 +1,8 @@
 [日本語版はこちら](./READMEJP.md)
 
+## 🌐 Live Demo
+You can access the live demo of this application here: [https://pinattutaro.github.io/todo/](https://pinattutaro.github.io/todo/)
+
 # React Todo App
 
 This is a feature-rich single-page Todo application built with React, TypeScript, and Vite. It provides a comprehensive set of tools for personal task management with a focus on a smooth and intuitive user experience.
@@ -74,9 +77,6 @@ _Visual alert for tasks due today, ensuring timely completion._
    npm run dev
    ```
 4. Open your browser and navigate to the provided local URL.
-
-## 🌐 Live Demo
-You can access the live demo of this application here: [https://pinattutaro.github.io/todo/](https://pinattutaro.github.io/todo/)
 
 ## 🗓️ Project Details
 - **Development Period**: November 6, 2025 - November 19, 2025

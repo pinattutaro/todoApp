@@ -1,5 +1,8 @@
 [English version is here](./README.md)
 
+## 🌐 ライブデモ
+このアプリケーションのライブデモには、こちらからアクセスできます: [https://pinattutaro.github.io/todo/](https://pinattutaro.github.io/todo/)
+
 # React Todoアプリ
 
 これは、React、TypeScript、Viteで構築された機能豊富なシングルページのTodoアプリケーションです。スムーズで直感的なユーザーエクスペリエンスに重点を置き、個人のタスク管理のための包括的なツールセットを提供します。
@@ -74,9 +77,6 @@ _今日が期限のタスクに対する視覚的な警告で、タイムリー�
    npm run dev
    ```
 4. ブラウザを開き、提供されたローカルURLに移動します。
-
-## 🌐 ライブデモ
-このアプリケーションのライブデモには、こちらからアクセスできます: [https://pinattutaro.github.io/todo/](https://pinattutaro.github.io/todo/)
 
 ## 🗓️ プロジェクト詳細
 - **開発期間**: 2025年11月6日 - 2025年11月19日
